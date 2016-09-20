@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160920103434) do
+ActiveRecord::Schema.define(version: 20160920113833) do
 
   create_table "events", force: :cascade do |t|
     t.string   "name",        limit: 255
@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(version: 20160920103434) do
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
     t.string   "remember_digest", limit: 255
+    t.string   "reset_digest",    limit: 255
+    t.datetime "reset_sent_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", using: :btree

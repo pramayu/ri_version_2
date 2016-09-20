@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   resources :events
   resources :users
+  resources :password_resets
   get 'signup', to: 'users#new'
   post 'signup', to: 'users#create'
   get 'login', to: 'sessions#new'
