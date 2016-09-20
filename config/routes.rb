@@ -5,8 +5,11 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   resources :events
   resources :users
-  get 'signup', to: 'users#new', as: :user_signup
+  get 'signup', to: 'users#new'
   post 'signup', to: 'users#create'
+  get 'login', to: 'sessions#new'
+  post 'login', to: 'sessions#create'
+  delete 'logout', to: 'sessions#destroy'
   root 'events#index'
 
   # Example of regular route:
