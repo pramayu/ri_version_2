@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  resources :events
+  resources :events do
+    resources :galleries
+  end
   resources :users
   resources :password_resets
   get 'signup', to: 'users#new'

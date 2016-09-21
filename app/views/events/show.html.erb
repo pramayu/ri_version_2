@@ -1,0 +1,10 @@
+<%= image_tag @event.image_url(:thumb)  %>
+<h2><%= @event.name  %></h2>
+<span class="date"> <%= @event.event_date.strftime("%d %b %Y") %> </span>
+<p><%= @event.description  %></p>
+<ul class="list-inline">
+  <% @event.galleries.each_with_index do |gal, index| %>
+    <li> <%= image_tag gal.source_url(:thumb) %> </li>
+  <% end  %>
+</ul>
+<%= link_to "Edit", edit_event_path(@event)  %>

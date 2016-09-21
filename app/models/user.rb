@@ -17,6 +17,8 @@ class User < ActiveRecord::Base
     BCrypt::Password.create(string, cost: cost)
   end 
 
+  has_many :events
+
   def create_reset_digest
     self.reset_token = User.new_token
    update_attribute(:reset_digest, User.digest(reset_token))
