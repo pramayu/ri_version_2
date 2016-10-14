@@ -28,6 +28,9 @@ gem 'carrierwave'
 gem "mini_magick"
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+gem 'friendly_id'
+gem 'masonry-rails'
+gem 'mail_form'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

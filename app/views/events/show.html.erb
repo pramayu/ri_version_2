@@ -1,10 +1,22 @@
-<%= image_tag @event.image_url(:thumb)  %>
-<h2><%= @event.name  %></h2>
-<span class="date"> <%= @event.event_date.strftime("%d %b %Y") %> </span>
-<p><%= @event.description  %></p>
-<ul class="list-inline">
-  <% @event.galleries.each_with_index do |gal, index| %>
-    <li> <%= image_tag gal.source_url(:thumb) %> </li>
-  <% end  %>
-</ul>
-<%= link_to "Edit", edit_event_path(@event)  %>
+<div class="shaws">
+  <div class="container">
+    <div class="titlte_show">
+      <h2 class="ff"><%= @event.name %></h2>
+      <div class="sara">
+        <p class="descf"><%= @event.description %></p>
+      </div>
+    </div>
+    <div class="isi_">
+      <div id="pins" class="transitions-enabled">
+        <% @event.galleries.each do |gallery| %>
+          <div class="box panel panel-default">
+            <%= image_tag gallery.source_url(:dinamis), class: "dinamic_image" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  $('.gal_er').addClass('active_s')  
+</script>

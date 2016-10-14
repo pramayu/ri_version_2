@@ -5,9 +5,16 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   resources :events do
     resources :galleries
+    collection do 
+      get 'galleries'
+    end
   end
   resources :users
   resources :password_resets
+  resources :sliders
+  resources :clients
+  resources :contacts, only: [:new, :create]
+  resources :testimonials, only: [:new, :create, :edit, :update, :destroy]
   get 'signup', to: 'users#new'
   post 'signup', to: 'users#create'
   get 'login', to: 'sessions#new'

@@ -14,4 +14,39 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
+//= require jquery.easing.1.3.js
+//= require jquery.nicescroll.min.js
 //= require_tree .
+
+$(function(){
+  jQuery("html").niceScroll({cursorcolor:"#c0bfbf"});
+});
+
+$(document).ready(function(){
+  // $("#mainNav_1").hide();
+  $(window).scroll(function (event) {
+    var scroll = $(window).scrollTop();
+    if (scroll > 20) {
+      $("#mainNav_1").addClass("active_nav");
+      $("#mainNav").css({
+        "opacity": "0"
+      });
+    } else {
+      $("#mainNav_1").removeClass("active_nav");
+      $("#mainNav").css({
+        "opacity": "1"
+      });
+    }
+  });
+});
+$(function(){
+  "use strict";
+  $('a.page-scroll').bind('click', function(event) {
+    var $anchor = $(this);
+    $('html, body').stop().animate({
+      scrollTop: ($($anchor.attr('href')).offset().top - 50)
+    }, 1250, 'easeInOutExpo');
+    event.preventDefault();
+  });
+});
+

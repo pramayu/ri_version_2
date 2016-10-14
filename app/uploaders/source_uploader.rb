@@ -32,8 +32,17 @@ class SourceUploader < CarrierWave::Uploader::Base
   # end
 
   # Create different versions of your uploaded files:
+
   version :thumb do
-    process :resize_to_fill => [230, 230]
+    process :resize_to_fill => [600, 399]
+  end
+
+  version :dinamis do
+    process :resize_to_fit => [600, 10000]
+  end
+
+  version :thumb do
+    process :resize_to_fill => [1920, 1280]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

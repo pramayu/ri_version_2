@@ -3,12 +3,19 @@ class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   def index
-
+    @sliders = Slider.all.limit(4)
+    @events = Event.all.order("created_at desc").limit(5)
+    @galleries = Event.all.order("created_at desc").limit(9)
+    @testimonials = Testimonial.all.order("created_at desc").limit(3)
+    @clients = Client.all
+    @contact = Contact.new
   end
 
   def new
     @event = current_user.events.build
+    @categories = Category.all.order("name")
     @event.galleries.build
+    render layout: "todo"
   end
 
   def create
@@ -21,7 +28,7 @@ class EventsController < ApplicationController
   end
 
   def show
-    
+    render layout: "todo"   
   end
 
   def edit
@@ -40,14 +47,19 @@ class EventsController < ApplicationController
 
   end
 
+  def galleries
+    @galleries = Event.all.order("created_at desc")
+    render layout: "todo"
+  end
+
   private 
 
   def set_event
-    @event = Event.find(params[:id])
+    @event = Event.friendly.find(params[:id])
   end
 
   def params_event
-    params.require(:event).permit(:name, :description, :image, :event_date, galleries_attributes: [:source])
+    params.require(:event).permit(:name, :description, :image, :event_date, :category_id, galleries_attributes: [:source])
   end
 
 end
