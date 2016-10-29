@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  
+  before_action :signed_in_user, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -49,6 +49,15 @@ class EventsController < ApplicationController
 
   def galleries
     @galleries = Event.all.order("created_at desc")
+    render layout: "todo"
+  end
+
+  def company
+    render layout: "todo"
+  end
+
+  def all_gallery
+    @galleries = Event.all.order('created_at desc')
     render layout: "todo"
   end
 

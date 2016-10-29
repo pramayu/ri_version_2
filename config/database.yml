@@ -13,13 +13,13 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: 5
-  username: ruangide
-  password: ruangide
+  username: root
+  password: ""
   socket: /var/run/mysqld/mysqld.sock
 
 development:
   <<: *default
-  database: ruangide_dev
+  database: ruangide
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: ruangide_pro
-  username: envclone
-  password: <%= ENV['ENVCLONE_DATABASE_PASSWORD'] %>
+  username: ruangide
+  password: ruangide

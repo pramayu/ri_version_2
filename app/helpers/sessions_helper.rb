@@ -40,4 +40,15 @@ module SessionsHelper
     cookies.permanent.signed[:user_id] = user.id
     cookies.permanent[:remember_token] = user.remember_token
   end
+  
+  def signed_in?
+    !current_user.nil?
+  end
+
+  def sign_out
+    forget(current_user)
+    session.delete(:user_id)
+    @current_user = nil
+    session[:cart_id] = nil
+  end
 end 

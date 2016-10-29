@@ -98,7 +98,6 @@ GEM
     nokogiri (1.6.8)
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
-    pg (0.18.4)
     pkg-config (1.1.7)
     rack (1.6.4)
     rack-test (0.6.3)
@@ -185,7 +184,6 @@ DEPENDENCIES
   masonry-rails
   mini_magick
   mysql2 (~> 0.3.13)
-  pg
   rails (= 4.2.5)
   rails_12factor
   sass-rails (~> 5.0)
@@ -196,4 +194,4 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
-   1.12.5
+   1.13.5

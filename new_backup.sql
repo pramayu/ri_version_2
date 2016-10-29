@@ -264,6 +264,7 @@ CREATE TABLE `users` (
   `remember_digest` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `reset_digest` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `reset_sent_at` datetime DEFAULT NULL,
+  `avatar` varchar(80) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `index_users_on_email` (`email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -275,7 +276,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'ruangide','ruangide@gmail.com','ruang','ide','$2a$10$quLboQwsi2GXxrBRSXRY2.1l74llXnIYKByHSTQd0bOU/OJsqLK8q','2016-09-20 05:01:25','2016-09-20 11:09:08',NULL,NULL,NULL),(2,'taanpermata','gedepramayu2@gmail.com','taan','permata','$2a$10$3Lr6rhEELl0Yy6Dk04LkM.rc8osHQXVp2PCucXvpds49nQgI/eK.W','2016-09-20 12:20:06','2016-09-20 12:46:11',NULL,NULL,'2016-09-20 12:39:56');
+INSERT INTO `users` VALUES (1,'ruangide','ruangide@gmail.com','ruang','ide','$2a$10$quLboQwsi2GXxrBRSXRY2.1l74llXnIYKByHSTQd0bOU/OJsqLK8q','2016-09-20 05:01:25','2016-10-29 05:17:45',NULL,NULL,NULL,NULL),(2,'taanpermata','gedepramayu2@gmail.com','taan','permata','$2a$10$3Lr6rhEELl0Yy6Dk04LkM.rc8osHQXVp2PCucXvpds49nQgI/eK.W','2016-09-20 12:20:06','2016-09-20 12:46:11',NULL,NULL,'2016-09-20 12:39:56',NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -288,4 +289,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-10-17  3:27:10
+-- Dump completed on 2016-10-29  3:26:49

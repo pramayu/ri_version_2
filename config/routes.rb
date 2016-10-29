@@ -19,7 +19,16 @@ Rails.application.routes.draw do
   post 'signup', to: 'users#create'
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
-  delete 'logout', to: 'sessions#destroy'
+  delete 'logout', to: 'sessions#destroy', as: :signout
+  get 'company/profile_1/:event_organizer', to: 'events#company', as: :company_event_organizer
+  get 'company/profile_2/:corporate_gathering', to: 'events#company', as: :company_corporate_gathering
+  get 'company/profile_3/:creative_concept', to: 'events#company', as: :company_creative_concept
+  get 'company/profile_4/:audio_visual', to: 'events#company', as: :company_audio_visual
+  get 'company/profile_5/:event_equipment', to: 'events#company', as: :company_event_equipment
+  get 'company/profile_6/:advertising', to: 'events#company', as: :company_ads
+  get 'company/profile_7/:design_graphic_design', to: 'events#company', as: :company_3d_design
+  get 'galleries', to: 'events#all_gallery', as: :all_gallery
+  get 'admin/dashboard', to: 'admins#dashboard', as: :dashboard
   root 'events#index'
 
   # Example of regular route:

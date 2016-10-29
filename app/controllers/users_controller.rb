@@ -1,4 +1,8 @@
 class UsersController < ApplicationController 
+  before_action :signed_in_user
+
+  layout "auth"
+
   def new
     @user = User.new
   end
