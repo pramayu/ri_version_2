@@ -1,6 +1,7 @@
 class TestimonialsController < ApplicationController
   before_action :signed_in_user
   before_action :set_test, only: [:edit, :update, :destroy]
+  layout "admin"
   def new
     @testimonial = Testimonial.new
   end

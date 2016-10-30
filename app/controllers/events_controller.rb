@@ -15,7 +15,7 @@ class EventsController < ApplicationController
     @event = current_user.events.build
     @categories = Category.all.order("name")
     @event.galleries.build
-    render layout: "todo"
+    render layout: "admin"
   end
 
   def create
@@ -32,7 +32,8 @@ class EventsController < ApplicationController
   end
 
   def edit
-
+    @categories = Category.all.order("name")
+    render layout: "admin"
   end
 
   def update

@@ -2,6 +2,8 @@ class SlidersController < ApplicationController
   before_action :signed_in_user
   before_action :set_slider, only: [:edit, :update, :destroy]
 
+  layout "admin"
+
   def index
 
   end
@@ -13,7 +15,7 @@ class SlidersController < ApplicationController
   def create
     @slider = Slider.new(params_slider)
     if @slider.save
-      redirect_to slider_path(@slider)
+      redirect_to new_slider_path
     else
       render 'new'
     end
