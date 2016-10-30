@@ -36,6 +36,10 @@ class SliderUploader < CarrierWave::Uploader::Base
     process :resize_to_fill => [250, 250]
   end
 
+  version :thumbso do
+    process :resize_to_fill => [537, 228]
+  end
+
   version :large do 
     process :resize_to_fill => [1920, 1280]
   end
