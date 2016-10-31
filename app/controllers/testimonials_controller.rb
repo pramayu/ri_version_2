@@ -10,7 +10,7 @@ class TestimonialsController < ApplicationController
   def create
     @testimonial = Testimonial.new(params_test)
     if @testimonial.save
-      redirect_to root_path
+      redirect_to all_testimonial_path
     else 
       render 'new'
     end
@@ -22,10 +22,20 @@ class TestimonialsController < ApplicationController
 
   def update
     if @testimonial.update(params_test)
-      redirect_to root_path
+      redirect_to all_testimonial_path
     else
       render 'edit'
     end
+  end
+
+  def all_testimonial
+    @tests = Testimonial.all.order('created_at desc')
+    render layout: "admin"
+  end
+
+  def destroy
+    @testimonial.destroy
+    redirect_to all_testimonial_url
   end
 
   private

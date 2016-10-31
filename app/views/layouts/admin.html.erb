@@ -28,10 +28,10 @@
     </div>
     <div class="navbar navbar-default left_nav">
       <div class="ahg">
-        <p class="dash_brd respond"><i class="fa fa-tachometer" aria-hidden="true"></i><a href="#">Dashboard</a></p>
-        <p class="event respond"><i class="fa fa-suitcase" aria-hidden="true"></i><a href="#">Event</a></p>
-        <p class="event respond"><i class="fa fa-retweet" aria-hidden="true"></i><a href="#">Slider</a></p>
-        <p class="event respond"><i class="fa fa-users" aria-hidden="true"></i><a href="#">Testimonial</a></p>
+        <p class="dash_brd respond aktif"><i class="fa fa-tachometer" aria-hidden="true"></i><%= link_to "Dashboard", dashboard_path %></p>
+        <p class="event__ respond"><i class="fa fa-suitcase" aria-hidden="true"></i><%= link_to "Event", all_event_url %></p>
+        <p class="slider__ respond"><i class="fa fa-retweet" aria-hidden="true"></i><%= link_to "Slider", all_slider_url %></p>
+        <p class="testimonial__ respond"><i class="fa fa-users" aria-hidden="true"></i><%= link_to "Testimonial", all_testimonial_url %></p>
       </div>
     </div>
     <%= yield %>

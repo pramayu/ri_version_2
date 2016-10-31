@@ -29,6 +29,9 @@ Rails.application.routes.draw do
   get 'company/profile_7/:design_graphic_design', to: 'events#company', as: :company_3d_design
   get 'galleries', to: 'events#all_gallery', as: :all_gallery
   get 'admin/dashboard', to: 'admins#dashboard', as: :dashboard
+  get 'admin/events', to: 'events#all_event', as: :all_event
+  get 'admin/sliders', to: 'sliders#all_slider', as: :all_slider
+  get 'admin/testimonials', to: 'testimonials#all_testimonial', as: :all_testimonial
   root 'events#index'
 
   # Example of regular route:

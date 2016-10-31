@@ -38,14 +38,15 @@ class EventsController < ApplicationController
 
   def update
     if @event.update(params_event)
-      redirect_to event_path(@event)
+      redirect_to all_event_url
     else
       render 'edit'
     end
   end
 
   def destroy
-
+    @event.destroy
+    redirect_to all_event_path
   end
 
   def galleries
@@ -60,6 +61,11 @@ class EventsController < ApplicationController
   def all_gallery
     @galleries = Event.all.order('created_at desc')
     render layout: "todo"
+  end
+
+  def all_event
+    @events = Event.all.order('created_at desc')
+    render layout: "admin"
   end
 
   private 
